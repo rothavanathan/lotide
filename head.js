@@ -10,7 +10,7 @@ const assertEqual = function(actual, expected) {
 //head() takes an array as a parameter and returns the first element
 const head = function(array) {
   return array[0];
-}
+};
 
 // TEST CODE
 assertEqual(head([5,6,7]), 5);
