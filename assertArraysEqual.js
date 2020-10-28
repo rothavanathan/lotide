@@ -12,11 +12,11 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+const assertArraysEqual = function(array1, array2, expectation) {
+  if ((eqArrays(array1, array2) && expectation === true) || (!eqArrays(array1, array2) && expectation === false) ) {
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2} is ${expectation}`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${array1} === ${array2} is not ${expectation}`);
   }
 };
 
@@ -27,4 +27,4 @@ const arrayBlue = [3, 5, 7];
 const arrayGreen = [2];
 const arrayBlack = [5, 3, 7];
 
-assertArraysEqual(arrayBlue, arrayRed);
+assertArraysEqual(arrayBlue, arrayGreen, false);
