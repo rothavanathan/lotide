@@ -13,7 +13,7 @@ const eqArrays = function(array1, array2) {
 };
 
 const assertArraysEqual = function(array1, array2, expectation) {
-  if ((eqArrays(array1, array2) && expectation === true) || (!eqArrays(array1, array2) && expectation === false) ) {
+  if ((eqArrays(array1, array2) && expectation === true) || (!eqArrays(array1, array2) && expectation === false)) {
     console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2} is ${expectation}`);
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${array1} === ${array2} is not ${expectation}`);
