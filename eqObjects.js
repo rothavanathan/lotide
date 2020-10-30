@@ -36,7 +36,13 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
-      //if values aren't both arrays
+      //else if both items are objects...
+    } else if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+      //... use a recursive call to check if the nested objects are equal
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
+      //otherwise we are comparing two primitive values
     } else {
       //check if values are equal
       if (object1[key] !== object2[key]) {
@@ -64,5 +70,21 @@ assertEqual(eqObjects(cd, dc), true);
 const cd2 = { c: "1", d: ["2", 3, 4] };
 eqObjects(cd, cd2); // => false
 assertEqual(eqObjects(cd, cd2), false);
-
 assertEqual(eqArrays(cd.d, cd2.d), false);
+
+//RECURSIVE TESTS
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true)
+assertEqual(eqObjects({ a: { z: 1, 
+                            x: {y: 5}, 
+                            b: {c: 2}
+                            }
+                      }, 
+                      { a: { z: 1, 
+                            x: {y: 5},
+                            b: {c: 2}
+                          }
+                      }), true)
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false)
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)
+
