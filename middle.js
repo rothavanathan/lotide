@@ -1,4 +1,7 @@
 const eqArrays = function(array1, array2) {
+  if (!array1 || !array2) {
+    return undefined;
+  }
   if (array1.length !== array2.length) {
     return false;
   }
@@ -10,11 +13,11 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2, expectation) {
-  if ((eqArrays(array1, array2) && expectation === true) || (!eqArrays(array1, array2) && expectation === false)) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2} is ${expectation}`);
+const assertArraysEqual = function(test, expectation) {
+  if ((test && expectation === true) || (!test && expectation === false)) {
+    console.log(`✅✅✅ Assertion Passed: your arrays are ${expectation === true ? "equal" : "not equal"}, just like you thought!!`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${array1} === ${array2} is not ${expectation}`);
+    console.log(`🛑🛑🛑 Assertion Failed: your arrays are ${expectation === true ? "not equal!!" : "equal!!"}`);
   }
 };
 
@@ -38,5 +41,10 @@ const middle = function(array) {
 
 
 // TEST CODE
-const testArray = [1,2,3,4,5];
-console.log(assertArraysEqual(middle(testArray),[3],true));
+const testArray = [1, 2, 3, 4, 5];
+const testArray2 = [1, 2];
+const testArray3 = [1, 2, 3, 4, 5, 6];
+assertArraysEqual(eqArrays(middle(testArray), [3]), true);
+assertArraysEqual(eqArrays(middle(testArray2), []), true);
+assertArraysEqual(eqArrays(middle(testArray3), [3, 4]), true);
+assertArraysEqual(eqArrays(middle(testArray3), [3]), false);

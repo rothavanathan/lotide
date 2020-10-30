@@ -7,6 +7,9 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(array1, array2) {
+  if (!array1 || !array2) {
+    return undefined;
+  }
   if (array1.length !== array2.length) {
     return false;
   }
@@ -25,6 +28,7 @@ const eqObjects = function(object1, object2) {
   //check if both objs have the same number of keys
   const obj1Keys = Object.keys(object1);
   const obj2Keys = Object.keys(object2);
+  //check if object have the same number of keys
   if (obj1Keys.length !== obj2Keys.length) {
     return false;
   }
@@ -49,15 +53,16 @@ const eqObjects = function(object1, object2) {
 
 // Implement assertObjectsEqual which will take in two objects and console.log an appropriate message to the console.
 // FUNCTION IMPLEMENTATION
-const assertObjectsEqual = function(obj1, obj2, expectation) {
-  const inspect = require('util').inspect;
-  if ((eqObjects(obj1, obj2) && expectation === true) || (!eqArrays(obj1, obj2) && expectation === false)) {
-    console.log(`✅✅✅ Assertion Passed: ${inspect(obj1)} === ${inspect(obj2)} is ${expectation}`);
+const assertObjectsEqual = function(test, expectation) {
+  if ((test && expectation === true) || (!test && expectation === false)) {
+    console.log(`✅✅✅ Assertion Passed: your objects are ${expectation === true ? "equal" : "not equal"}, just like you thought!!`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(obj1)} === ${inspect(obj2)} is not ${expectation}`);
+    console.log(`🛑🛑🛑 Assertion Failed: your objects are ${expectation === true ? "not equal!!" : "equal!!"}`);
   }
 };
 
 const dict1 = {a:1, b:[2,3]};
 const dict2 = {b:[2,3], a:1};
-assertObjectsEqual(dict1, dict2, true);
+const dict3 = {a:2};
+assertObjectsEqual(eqObjects(dict1, dict2), true);
+assertObjectsEqual(eqObjects(dict1, dict3), false);

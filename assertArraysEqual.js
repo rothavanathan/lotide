@@ -1,6 +1,8 @@
 //Implement assertArraysEqual which will take in two arrays and console.log an appropriate message to the console.
-
 const eqArrays = function(array1, array2) {
+  if (!array1 || !array2) {
+    return undefined;
+  }
   if (array1.length !== array2.length) {
     return false;
   }
@@ -12,11 +14,11 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2, expectation) {
-  if ((eqArrays(array1, array2) && expectation === true) || (!eqArrays(array1, array2) && expectation === false)) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2} is ${expectation}`);
+const assertArraysEqual = function(test, expectation) {
+  if ((test && expectation === true) || (!test && expectation === false)) {
+    console.log(`✅✅✅ Assertion Passed: your arrays are ${expectation === true ? "equal" : "not equal"}, just like you thought!!`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${array1} === ${array2} is not ${expectation}`);
+    console.log(`🛑🛑🛑 Assertion Failed: your arrays are ${expectation === true ? "not equal!!" : "equal!!"}`);
   }
 };
 
@@ -27,4 +29,6 @@ const arrayBlue = [3, 5, 7];
 const arrayGreen = [2];
 const arrayBlack = [5, 3, 7];
 
-assertArraysEqual(arrayBlue, arrayGreen, false);
+assertArraysEqual(eqArrays(arrayBlue, arrayRed), true);
+assertArraysEqual(eqArrays(arrayBlue, arrayGreen), false);
+assertArraysEqual(eqArrays(arrayBlue, arrayBlack), false);
