@@ -1,25 +1,5 @@
-const eqArrays = function(array1, array2) {
-  if (!array1 || !array2) {
-    return [];
-  }
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(test, expectation) {
-  if ((test && expectation === true) || (!test && expectation === false)) {
-    console.log(`✅✅✅ Assertion Passed: your arrays are ${expectation === true ? "equal" : "not equal"}, just like you thought!!`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: your arrays are ${expectation === true ? "not equal!!" : "equal!!"}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 //Implement without.js which will return a subset of a given array, removing unwanted elements.
 
@@ -44,6 +24,9 @@ const without = function(sourceArray, itemsToRemove) {
   return outputArray;
 };
 
+
+
+// TEST CODE
 //Use assertArraysEqual to write test cases for various scenarios.
 
 //Write a test case to make sure that the original array is not modified.
