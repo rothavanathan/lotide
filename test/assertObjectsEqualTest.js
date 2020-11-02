@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const assertObjectsEqual = require('../assertObjectsEqual');
 const eqObjects = require('../eqObjects');
 
-describe("tail", () => {
+describe("assertObjectsEqual", () => {
 
   it("should return true if both objects are identical and expectation is true", () => {
     const dict1 = {a:1, b:[2,3]};
