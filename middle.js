@@ -1,6 +1,4 @@
-const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
-
+//should return the middle value of an array. for even length arrays it will return the two middle items in an array
 const middle = function(array) {
   let middleElement = [];
   // For arrays with one or two elements, there is no middle. Return an empty array.
@@ -19,12 +17,4 @@ const middle = function(array) {
   return middleElement;
 };
 
-
-// TEST CODE
-const testArray = [1, 2, 3, 4, 5];
-const testArray2 = [1, 2];
-const testArray3 = [1, 2, 3, 4, 5, 6];
-assertArraysEqual(eqArrays(middle(testArray), [3]), true);
-assertArraysEqual(eqArrays(middle(testArray2), []), true);
-assertArraysEqual(eqArrays(middle(testArray3), [3, 4]), true);
-assertArraysEqual(eqArrays(middle(testArray3), [3]), false);
+module.exports = middle;
