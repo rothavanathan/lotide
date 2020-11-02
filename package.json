@@ -1,0 +1,28 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "a library of handy dandy functions to speed up your javascript workflow",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rothavanathan/lotide.git"
+  },
+  "author": "Romesh Thavanathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rothavanathan/lotide/issues"
+  },
+  "homepage": "https://github.com/rothavanathan/lotide#readme"
+}
