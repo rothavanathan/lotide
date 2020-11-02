@@ -11,6 +11,3 @@ const countLetters = function(string) {
 };
 
 module.exports = countLetters;
-//TEST CODE
-
-assertEqual(countLetters('Taco is the best').s, 2,);
