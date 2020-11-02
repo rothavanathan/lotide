@@ -1,5 +1,6 @@
-const assertEqual = require('./assertEqual');
-
+//tail returns everything but the first item of an array > length 1
+//nothing on an array of length 1
+//
 const tail = function(array) {
   if (array.length === 0) {
     return [];
@@ -7,16 +8,4 @@ const tail = function(array) {
   return array.slice(1);
 };
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
-
-
-//test: one element array
-const songs = ["I'll believe in anything"];
-console.log(tail(songs));
-
-//test: empty array
-const empty = [];
-console.log(tail(empty));
+module.exports = tail;
