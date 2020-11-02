@@ -12,23 +12,7 @@ const takeUntil = function(array, callback) {
   return results;
 };
 
-
-//TEST CODE
-
-const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
+module.exports = takeUntil;
 
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-assertArraysEqual(eqArrays(results1, [ 1, 2, 5, 7, 2 ]), true);
-//EXPECTED RESULTS
-
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-
-assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]), true);
-assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'to', 'Hollywood' ]), false);
-
-// ---
 
