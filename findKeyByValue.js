@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const findKeyByValue = function(obj, searchValue) {
   //initialize return answer
   let key;
@@ -11,15 +9,4 @@ const findKeyByValue = function(obj, searchValue) {
   return key;
 };
 
-//TEST CODE
-const bestTVShowsByGenre = {
-  sciFi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-//check fails
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "sciFi");
+module.exports = findKeyByValue;
