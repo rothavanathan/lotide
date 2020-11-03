@@ -1,6 +1,6 @@
 {
   "name": "@tinyemperor/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a library of handy dandy functions to speed up your javascript workflow",
   "main": "index.js",
   "directories": {
