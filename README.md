@@ -26,12 +26,6 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `assertArrayEqual(test, expectation)`: pass a deep comparison of two arrays as a test, and your expected result of the comparison (boolean) and assertArrayEqual will log your result and will return true if your assertion was right and false if you were wrong;
-
-* `assertEqual(test, expectation)`: pass an expression as a test, and your expected result of the expression (primitive data types only) and assertEqual will log your result and will return true if your assertion was right and false if you were wrong.
-
-* `assertObjectsEqual(test, expectation)`: pass a deep comparison of two objects as a test, and your expected result of the comparison (boolean) and assertObjectsEqual will log your result and will return true if your assertion was right and false if you were wrong.
-
 * `countLetters(string)`: returns an object with the number of occurrences of each character in your string.
 
 * `countOnly(array, {string: boolean, string: boolean})`: count only will return a filtered array using the object argument’s keys as filters. The function will either add or filter the object’s property to the returned array based on it’s boolean value (true or false respectively).
