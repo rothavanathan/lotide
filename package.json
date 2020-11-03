@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@tinyemperor/lotide",
   "version": "1.0.0",
   "description": "a library of handy dandy functions to speed up your javascript workflow",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
